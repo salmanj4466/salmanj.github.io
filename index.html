@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Tide Dry Cleaners</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="colorlib.com">
+      <!-- Favicon -->
+      <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+      <!-- Font Family -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <!-- STYLE CSS -->
+      <link rel="stylesheet" href="assets/css/style.css">
+
+   </head>
+
+   <body>
+      <header> 
+      <!-- Image and text -->    
+      <nav class="navbar navbar-light d-flex justify-content-center mb-2">
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/logo.png" class="d-inline-block align-top" alt="logo">
+        </a>
+      </nav>
+   </header>
+
+      <div class="wrapper">
+      <div class="container">
+         <h4 class="text-center mb-4 pb-1 mt-sm-5 pt-sm-4">Please take a moment to tell us about your experience!</h4>
+         <!-- Form Wizard -->
+         <div class="form-wizard text-center mb-5">
+            <!-- Step 1 -->
+            <div id="step-1">
+               <div class="row py-0 py-sm-3">
+                  <div class="col-md-12 py-5">
+                     <button type="button" id="take_survery" class="btn btn-primary mr-md-1">Take a Survey</button>
+                     <button type="button" id="feedback" class="btn btn-secondary ml-md-1">Provide Feedback</button>
+                  </div>
+               </div>
+            </div>
+            <!-- Step 2 -->
+            <div id="step-2" class="step-2">
+               <form>
+                  <div class="form-group">
+                     <select class="form-control">
+                        <option value="">Please select the type of location you visited</option>
+                        <option value="Company Name- Elm - 642 Elm Ave, Boise , ID 83701">Company Name- Elm - 642 Elm Ave, Boise , ID 83701</option>
+                        <option value="Company Name- Mall - 801 Mall Pkwy, Portland, OR 97212">Company Name- Mall - 801 Mall Pkwy, Portland, OR 97212</option>
+                     </select>
+                  </div>
+                  <div class="form-group">
+                     <select class="form-control">
+                        <option value="">Please select the state</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="California">California</option>
+                        <option value="Delaware">Delaware</option>
+                     </select>
+                  </div>
+                  <div class="form-group">
+                     <select class="form-control">
+                        <option value="">Please select the city</option>
+                        <option value="New York">New York</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Houston">Houston</option>
+                     </select>
+                  </div>
+                  <div class="form-group mb-0">
+                     <select class="form-control">
+                        <option value="">Please select the location you visited</option>
+                        <option value="Company Name- Elm - 642 Elm Ave, Boise , ID 83701">Company Name- Elm - 642 Elm Ave, Boise , ID 83701</option>
+                     </select>
+                  </div>
+                  <button type="button" class="btn btn-primary mt-4" style="display: none;">Start Survey</button>
+               </form>
+            </div>
+            
+         </div>
+         <footer class="footer">
+            <p class="copyright">Copyright © 2020 tidedrycleaners.com</p>
+         </footer>
+      </div>
+   </div>
+
+      <!-- Javascript -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script>
+         $(document).ready(function(){
+            $("#take_survery, #feedback").click(function () {
+               $("#step-1").hide();
+               $("#step-2").fadeIn();
+            });
+         });
+         $('#step-2 select').change(function () {
+            var check = true;
+            $('#step-2 select').each(function () {
+               if ($(this).val() == '')
+                  check = false;
+               
+               if (check == true) 
+                  $('#step-2 button').show();
+               else
+                  $('#step-2 button').hide();
+               
+            })
+         })
+      </script>  
+   </body>
+</html>
